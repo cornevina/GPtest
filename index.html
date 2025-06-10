@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Level GP Paper 1 Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg-dark: #0f172a; /* slate-900 */
+            --bg-mid: #1e293b; /* slate-800 */
+            --border-color: #334155; /* slate-700 */
+            --text-main: #e2e8f0; /* slate-200 */
+            --text-muted: #94a3b8; /* slate-400 */
+            --accent-cyan: #22d3ee;
+            --accent-pink: #f472b6;
+            --accent-green: #4ade80;
+            --accent-red: #f87171;
+            --accent-amber: #facc15;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+        }
+        .hero-gradient {
+            background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(34, 211, 238, 0.3), var(--bg-dark));
+        }
+        .heading-font {
+            font-weight: 900;
+        }
+        .section-title {
+            color: #ffffff;
+        }
+        .card {
+            background-color: var(--bg-mid);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 25px rgba(34, 211, 238, 0.2);
+            border-color: var(--accent-cyan);
+        }
+        .question-card {
+            background: linear-gradient(145deg, #1e293b, #2c3a50);
+            justify-content: space-between;
+            padding: 1.5rem;
+        }
+        .question-card .icon-container {
+            font-size: 1.5rem;
+            color: var(--accent-cyan);
+            opacity: 0.5;
+            align-self: flex-end;
+        }
+        .pitfall-card {
+            border-left: 4px solid var(--accent-red);
+        }
+        .strategy-card {
+            border-left: 4px solid var(--accent-green);
+        }
+        .rebuttal-path > div { padding-left: 3.5rem; position: relative; }
+        .rebuttal-path > div::before { content: ''; position: absolute; left: 1rem; width: 2px; top: 1.5rem; height: calc(100% - 1.5rem); background-color: #475569; }
+        .rebuttal-path > div:last-child::before { display: none; }
+        .rebuttal-path > div::after { content: ''; position: absolute; left: 1rem; top: 1.5rem; width: 1rem; height: 2px; background-color: var(--accent-cyan); }
+        .case-study-card { background-color: rgba(34, 211, 238, 0.05); border: 1px solid rgba(34, 211, 238, 0.2); }
+        .blueprint-step { position: relative; padding-left: 4rem; }
+        .blueprint-step:not(:last-child) { padding-bottom: 3rem; }
+        .blueprint-step::before { content: ''; position: absolute; left: 1.5rem; top: 3rem; width: 2px; height: calc(100% - 1.5rem); background-color: var(--border-color); }
+        .blueprint-step:last-child::before { display: none; }
+        .blueprint-icon { position: absolute; left: 0; top: 0; width: 3rem; height: 3rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.25rem; color: white; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="hero-gradient pt-20 pb-16 sm:pt-32 sm:pb-24">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h1 class="text-4xl sm:text-6xl heading-font text-white tracking-tighter">A-Level GP: Deconstructed</h1>
+            <p class="mt-4 text-lg max-w-2xl mx-auto text-text-muted">An infographic guide to the 2024 Paper 1 questions, common exam pitfalls, and the winning strategies for a stronger essay.</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-12 sm:py-20 space-y-24">
+
+        <section>
+            <h2 class="text-3xl sm:text-4xl heading-font text-center section-title mb-12">The 2024 Question Paper</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Question cards with full text -->
+                <div class="card question-card"><p class="font-semibold flex-grow"><strong>Q1.</strong> To what extent are science and technology able to solve the problem of waste disposal?</p><div class="icon-container mt-4"><i data-lucide="recycle"></i></div></div>
+                <div class="card question-card"><p class="font-semibold flex-grow"><strong>Q2.</strong> How desirable is it for a country to provide free healthcare for all its citizens?</p><div class="icon-container mt-4"><i data-lucide="heart-pulse"></i></div></div>
+                <div class="card question-card"><p class="font-semibold flex-grow"><strong>Q3.</strong> Evaluate the measures taken in your society to deter crime and punish individuals.</p><div class="icon-container mt-4"><i data-lucide="gavel"></i></div></div>
+                <div class="card question-card"><p class="font-semibold flex-grow"><strong>Q4.</strong> ‘Education today should involve more than the study of academic subjects.’ How far do you agree?</p><div class="icon-container mt-4"><i data-lucide="book-open-check"></i></div></div>
+                <div class="card question-card"><p class="font-semibold flex-grow"><strong>Q5.</strong> Assess the view that it is always right to challenge injustice.</p><div class="icon-container mt-4"><i data-lucide="swords"></i></div></div>
+                <div class="card question-card"><p class="font-semibold flex-grow"><strong>Q6.</strong> ‘Online advertisements use increasingly sophisticated methods to target consumers.’ To what extent does this bring more harm than good?</p><div class="icon-container mt-4"><i data-lucide="mouse-pointer-click"></i></div></div>
+                <div class="card question-card"><p class="font-semibold flex-grow"><strong>Q7.</strong> ‘Humour is essential for an individual’s well-being.’ Discuss.</p><div class="icon-container mt-4"><i data-lucide="smile"></i></div></div>
+                <div class="card question-card"><p class="font-semibold flex-grow"><strong>Q8.</strong> ‘There is a lack of appreciation for the value of music.’ How far is this true in your society?</p><div class="icon-container mt-4"><i data-lucide="music-4"></i></div></div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-3xl sm:text-4xl heading-font text-center section-title mb-4">Exam Day Panic: The Three Major Traps</h2>
+            <p class="text-center text-text-muted mb-12 max-w-2xl mx-auto">Panic stems from flawed assumptions. Here's a comparison of common traps versus winning mindsets.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card p-6 pitfall-card"><div class="flex items-center gap-4"><i data-lucide="package-x" class="w-10 h-10 text-red-400"></i><h3 class="font-bold text-lg text-white">The Topic Trap</h3></div><p class="mt-3 text-sm text-text-muted flex-grow">"My prepared topic isn't here!" This is a fragile strategy based on luck.</p><div class="mt-4 pt-4 border-t border-slate-700"><p class="text-xs font-semibold text-green-400">MINDSET SHIFT:</p><p class="text-sm text-text-main">Focus on skills (analysis, argumentation) and versatile case studies, not narrow topics.</p></div></div>
+                <div class="card p-6 pitfall-card"><div class="flex items-center gap-4"><i data-lucide="blinds" class="w-10 h-10 text-red-400"></i><h3 class="font-bold text-lg text-white">The Pigeonhole Trap</h3></div><p class="mt-3 text-sm text-text-muted flex-grow">"Waste disposal is an environment question." This blinds you to deeper layers.</p><div class="mt-4 pt-4 border-t border-slate-700"><p class="text-xs font-semibold text-green-400">MINDSET SHIFT:</p><p class="text-sm text-text-main">See every question as multi-faceted. Link it to politics, economics, and ethics.</p></div></div>
+                <div class="card p-6 pitfall-card"><div class="flex items-center gap-4"><i data-lucide="unlink-2" class="w-10 h-10 text-red-400"></i><h3 class="font-bold text-lg text-white">The Relevancy Trap</h3></div><p class="mt-3 text-sm text-text-muted flex-grow">"My knowledge is useless for this paper." This stems from a failure to see connections.</p><div class="mt-4 pt-4 border-t border-slate-700"><p class="text-xs font-semibold text-green-400">MINDSET SHIFT:</p><p class="text-sm text-text-main">Learn to adapt your knowledge. Your case study on corporate greed *is* a waste disposal argument.</p></div></div>
+            </div>
+        </section>
+
+        <section>
+             <h2 class="text-3xl sm:text-4xl heading-font text-center section-title mb-12">The Two Pillars of a Winning Essay</h2>
+             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                <div class="card strategy-card p-8">
+                    <div class="flex items-center gap-4 mb-3"><i data-lucide="brain-circuit" class="w-10 h-10 text-green-400"></i><h3 class="text-2xl font-bold text-white">Interdisciplinary Thinking</h3></div>
+                    <p class="text-text-muted flex-grow">See beyond the obvious topic. Every question is a web of interconnected issues. This is where top marks are won.</p>
+                    <div class="mt-6 p-4 rounded-lg bg-slate-900 border border-slate-700 space-y-4">
+                        <p class="font-semibold text-white text-center">Deconstructing "Waste Disposal"</p>
+                        <div>
+                            <p class="font-semibold text-cyan-400 flex items-center gap-2"><i data-lucide="landmark"></i>Politics</p>
+                            <p class="text-xs text-text-muted mt-1">Lobbying to weaken regulations, deceptive 'Greenwashing' campaigns, failed international agreements (e.g., on plastic waste).</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-pink-400 flex items-center gap-2"><i data-lucide="trending-up"></i>Economics</p>
+                            <p class="text-xs text-text-muted mt-1">Profit motives driving overproduction, consumerism as a cultural norm, planned obsolescence in product design.</p>
+                        </div>
+                        <div>
+                             <p class="font-semibold text-amber-400 flex items-center gap-2"><i data-lucide="scale"></i>Ethics</p>
+                            <p class="text-xs text-text-muted mt-1">Lack of corporate responsibility for product lifecycle, violation of consumer 'Right to Repair', environmental injustice.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card strategy-card p-8">
+                    <div class="flex items-center gap-4 mb-3"><i data-lucide="library" class="w-10 h-10 text-green-400"></i><h3 class="text-2xl font-bold text-white">The Case Study Approach</h3></div>
+                    <p class="text-text-muted flex-grow">A deep case study is a multi-tool. It provides concrete, specific evidence for your arguments across various questions.</p>
+                    <div class="mt-6 p-4 rounded-lg bg-slate-900 border border-slate-700"><p class="font-semibold text-white text-center mb-4">One Case Study, Multiple Applications</p><div class="flex items-center justify-center gap-4 text-center"><div class="flex-shrink-0"><p class="font-bold text-sm text-pink-400">Right to Repair</p><i data-lucide="wrench" class="text-pink-400 mx-auto"></i></div><i data-lucide="arrow-right" class="text-slate-500"></i><div class="grid grid-cols-2 gap-2 text-left"><p class="text-xs text-text-muted flex items-center gap-1"><i data-lucide="recycle" class="w-3 h-3 text-cyan-400"></i>E-Waste</p><p class="text-xs text-text-muted flex items-center gap-1"><i data-lucide="dollar-sign" class="w-3 h-3 text-cyan-400"></i>Capitalism</p><p class="text-xs text-text-muted flex items-center gap-1"><i data-lucide="lightbulb" class="w-3 h-3 text-cyan-400"></i>Innovation</p><p class="text-xs text-text-muted flex items-center gap-1"><i data-lucide="scale" class="w-3 h-3 text-cyan-400"></i>Ethics</p></div></div></div>
+                </div>
+             </div>
+        </section>
+
+        <section>
+            <h2 class="text-3xl sm:text-4xl heading-font text-center section-title mb-4">Deep Dive: Deconstructing Q1</h2>
+            <p class="text-center text-text-muted mb-12 font-semibold">"To what extent are science and technology able to solve the problem of waste disposal?"</p>
+            
+            <div class="card p-8 md:p-12">
+                <div class="mb-16"><h3 class="font-bold text-xl text-white mb-2 text-center">Step 1: Define "Waste" Broadly</h3><p class="text-text-muted text-center">Move beyond household trash to unlock deeper, more sophisticated arguments.</p><div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8"><div class="p-4 rounded-lg bg-slate-900 border border-slate-700 text-center"><i data-lucide="smartphone" class="mx-auto mb-2 text-pink-400"></i><h4 class="font-semibold text-sm">E-Waste</h4><p class="text-xs text-text-muted">Planned obsolescence</p></div><div class="p-4 rounded-lg bg-slate-900 border border-slate-700 text-center"><i data-lucide="shopping-basket" class="mx-auto mb-2 text-green-400"></i><h4 class="font-semibold text-sm">Food Waste</h4><p class="text-xs text-text-muted">Conservative expiry dates</p></div><div class="p-4 rounded-lg bg-slate-900 border border-slate-700 text-center"><i data-lucide="shirt" class="mx-auto mb-2 text-blue-400"></i><h4 class="font-semibold text-sm">Textile Waste</h4><p class="text-xs text-text-muted">Fast fashion culture</p></div><div class="p-4 rounded-lg bg-slate-900 border border-slate-700 text-center"><i data-lucide="cloud" class="mx-auto mb-2 text-cyan-400"></i><h4 class="font-semibold text-sm">Carbon Emissions</h4><p class="text-xs text-text-muted">Industrial byproduct</p></div><div class="p-4 rounded-lg bg-slate-900 border border-slate-700 text-center"><i data-lucide="biohazard" class="mx-auto mb-2 text-yellow-400"></i><h4 class="font-semibold text-sm">Nuclear Waste</h4><p class="text-xs text-text-muted">Radioactive byproducts</p></div><div class="p-4 rounded-lg bg-slate-900 border border-slate-700 text-center"><i data-lucide="syringe" class="mx-auto mb-2 text-red-400"></i><h4 class="font-semibold text-sm">Biomedical Waste</h4><p class="text-xs text-text-muted">Antimicrobial resistance</p></div></div></div>
+
+                <h3 class="font-bold text-xl text-white mb-2 text-center">Step 2 & 3: Structure Your Argument</h3><p class="text-text-muted text-center mb-10">Go beyond a simple "for and against" list to build a powerful, persuasive case.</p>
+                <div class="rebuttal-path mt-8">
+                    <div><h4 class="font-bold text-pink-400 mb-2">The Counter-Argument (Techno-Optimist)</h4><p class="text-text-muted text-sm mb-3">"Science can solve anything. Human ingenuity created plastic-eating bacteria and carbon capture. Waste is just another technical problem to be solved."</p><div class="p-3 rounded-lg bg-slate-900/50 border border-slate-700"><p class="text-xs font-semibold text-text-main">Techno-Optimist Exhibits:</p><ul class="text-xs text-text-muted list-disc list-inside mt-1"><li>Advanced chemical recycling breakthroughs (e.g., Carbios)</li><li>Discovery of plastic-eating enzymes (e.g., PETase)</li><li>Progress in Direct Air Capture (e.g., Orca plant in Iceland)</li></ul></div></div>
+                    <div class="mt-8"><h4 class="font-bold text-cyan-400 mb-1">Your Rebuttal: The Problem Isn't Technological, It's Human.</h4><p class="text-text-muted text-sm">Technology's potential is blocked by systemic issues. The true drivers of waste are profit and politics, which technology alone cannot fix.</p></div>
+                     <div class="mt-8"><h4 class="font-bold text-cyan-400 mb-1">Point 1: The Profit Motive Creates Waste</h4><div class="case-study-card p-4 mt-3 rounded-lg"><p class="font-semibold text-white text-sm flex items-center gap-2"><i data-lucide="book-marked"></i>Case Study: The 'Right to Repair'</p><p class="text-text-muted text-xs mt-2">Companies deploy hostile design like 'parts pairing' (where a genuine replacement part won't work unless authorised by the company's software), making repairs impossible for third parties. This isn't a failure of tech, but a business model that creates e-waste.</p></div></div>
+                     <div class="mt-8"><h4 class="font-bold text-cyan-400 mb-1">Point 2: "Green" Tech Is Used for Deception</h4><div class="case-study-card p-4 mt-3 rounded-lg"><p class="font-semibold text-white text-sm flex items-center gap-2"><i data-lucide="book-marked"></i>Case Study: Greenwashing with Carbon Credits</p><p class="text-text-muted text-xs mt-2">Airlines buy cheap, often unverifiable 'carbon credits' from projects that may have happened anyway (non-additional). The 'tech' of carbon offsetting gives a false impression of sustainability, masking the ongoing pollution.</p></div></div>
+                     <div class="mt-8"><h4 class="font-bold text-cyan-400 mb-1">Point 3: Tech Fails to Address Root Cause - Consumerism</h4><div class="case-study-card p-4 mt-3 rounded-lg"><p class="font-semibold text-white text-sm flex items-center gap-2"><i data-lucide="book-marked"></i>Case Study: Hyper-Fast Fashion</p><p class="text-text-muted text-xs mt-2">Tech-driven logistics allow companies like Shein to add 6,000+ new items *daily*. This fuels a throwaway culture where clothes are treated as disposable. Stat: The equivalent of one garbage truck of textiles is landfilled or burned every second.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-3xl sm:text-4xl heading-font text-center section-title mb-12">Blueprint for an A-Grade Essay</h2>
+            <div class="max-w-2xl mx-auto">
+                <div class="blueprint-step"><div class="blueprint-icon bg-cyan-500">1</div><h3 class="font-bold text-2xl text-white">Take a STRONG Stand</h3><p class="text-text-muted mt-1">Avoid a wishy-washy "balanced" view. Start with a clear, argumentative thesis. <br><em>e.g., "While technology offers superficial remedies, it is fundamentally incapable of solving the waste problem, which is rooted not in technical but in economic and political systems."</em></p></div>
+                <div class="blueprint-step"><div class="blueprint-icon bg-pink-500">2</div><h3 class="font-bold text-2xl text-white">Address the Counter-Argument</h3><p class="text-text-muted mt-1">Acknowledge the opposing view fairly (the "techno-optimist" stance). This demonstrates intellectual rigour before you systematically dismantle it.</p></div>
+                <div class="blueprint-step"><div class="blueprint-icon bg-green-500">3</div><h3 class="font-bold text-2xl text-white">Rebut & Build Your Case</h3><p class="text-text-muted mt-1">Dedicate your body paragraphs to refuting the counter-argument. Use your interdisciplinary points and case studies as powerful, concrete evidence to support your thesis.</p></div>
+            </div>
+        </section>
+    
+    </main>
+
+    <footer class="text-center py-10 mt-16 border-t border-slate-800">
+        <p class="text-sm text-text-muted">An Analytical Guide to the GP A-Level Examination</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
